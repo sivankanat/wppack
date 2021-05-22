@@ -1,0 +1,59 @@
+/**
+* Flex Module
+* 
+*/
+/* flex gap */
+@each $name, $size in $gaps {
+  [#{$put}flex~="gap:#{$name}"] {
+    flex-direction: row;
+    margin-left: -#{$size};
+    margin-bottom: -#{$size};
+    > * {
+      padding-left: #{$size};
+      margin-bottom: #{$size};
+    }
+  }
+}
+
+.#{$put}flex,
+[#{$put}flex] {
+  display: flex;
+  > * {
+    width: auto;
+  }
+  > .expand {
+    flex: 1;
+    min-width: 1rem;
+  }
+}
+
+[#{$put}flex*="fw:wrap"] {
+  flex-wrap: wrap;
+}
+
+[#{$put}flex*="ai:center"] {
+  align-items: center;
+}
+
+[#{$put}flex~="jc:center"] {
+  justify-content: center;
+}
+
+[#{$put}flex~="fd:row"] {
+  flex-direction: row;
+}
+
+[#{$put}flex~="fd:col"] {
+  flex-direction: column;
+}
+
+[#{$put}flex~="ac:stretch"] {
+  flex-wrap: wrap;
+  align-content: stretch;
+}
+
+/* other */
+.flex\:a,
+.flex\:auto {
+  flex: 0 0 auto;
+}

@@ -1,0 +1,35 @@
+#app_panel {
+  input,
+  textarea {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: unset;
+    padding: 5px 10px;
+  }
+  .field {
+    display: flex;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px dashed #ccc;
+
+    p.title,
+    p.desc {
+      margin: 0;
+    }
+    p.title {
+      font-weight: 500;
+    }
+    p.desc {
+      opacity: 0.7;
+      font-size: 89%;
+    }
+
+    .field-head {
+      flex: 0 0 35%;
+    }
+
+    .field-body {
+      flex: auto;
+    }
+  }
+}

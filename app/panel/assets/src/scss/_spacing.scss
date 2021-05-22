@@ -1,0 +1,121 @@
+/**
+* Spacing Module
+* 
+*/
+.#{$put}ml\:a,
+.#{$put}ml\:auto {
+  margin-left: auto;
+}
+
+.#{$put}mr\:a,
+.#{$put}mr\:auto {
+  margin-right: auto;
+}
+
+.#{$put}mx\:a,
+.#{$put}mx\:auto {
+  margin-right: auto;
+  margin-left: auto;
+}
+.#{$put}mg\:reset {
+  margin: 0 !important;
+}
+.#{$put}pd\:reset {
+  padding: 0 !important;
+}
+
+/* margins */
+$margin_list: (
+  "top": "#{$put}mt",
+  "right": "#{$put}mr",
+  "left": "#{$put}ml",
+  "bottom": "#{$put}mb",
+);
+
+@each $name, $value in $spaces {
+  .#{$put}mx\:#{$name} {
+    margin-left: $value;
+    margin-right: $value;
+  }
+  .#{$put}my\:#{$name} {
+    margin-top: $value !important;
+    margin-bottom: $value !important;
+  }
+  .#{$put}mg\:#{$name} {
+    margin: $value !important;
+  }
+  @each $key, $val in $margin_list {
+    .#{$val}\:#{$name} {
+      margin-#{$key}: $value !important;
+    }
+  }
+}
+
+/* paddings */
+$paddings: (
+  "top": "#{$put}pt",
+  "right": "#{$put}pr",
+  "left": "#{$put}pl",
+  "bottom": "#{$put}pb",
+);
+@each $name, $value in $spaces {
+  .#{$put}px\:#{$name} {
+    padding-left: $value !important;
+    padding-right: $value !important;
+  }
+  .#{$put}py\:#{$name} {
+    padding-top: $value !important;
+    padding-bottom: $value !important;
+  }
+  .#{$put}pd\:#{$name} {
+    padding: $value !important;
+  }
+  @each $key, $val in $paddings {
+    .#{$val}\:#{$name} {
+      padding-#{$key}: $value !important;
+    }
+  }
+}
+
+@each $screen, $size in $screens {
+  @media screen and(min-width: $size) {
+    @each $name, $value in $spaces {
+      .#{$screen}\@#{$put}px\:#{$name} {
+        padding-left: $value;
+        padding-right: $value;
+      }
+      .#{$screen}\@#{$put}py\:#{$name} {
+        padding-top: $value;
+        padding-bottom: $value;
+      }
+      .#{$screen}\@#{$put}pd\:#{$name} {
+        padding: $value !important;
+      }
+      @each $key, $val in $paddings {
+        .#{$screen}\@#{$val}\:#{$name} {
+          padding-#{$key}: $value;
+        }
+      }
+    }
+
+    //margin
+    @each $name, $value in $spaces {
+      .#{$screen}\@#{$put}mx\:#{$name} {
+        margin-left: $value;
+        margin-right: $value;
+      }
+      .#{$screen}\@#{$put}my\:#{$name} {
+        margin-top: $value;
+        margin-bottom: $value;
+      }
+      .#{$screen}\@#{$put}mg\:#{$name} {
+        margin: $value !important;
+      }
+      @each $key, $val in $margin_list {
+        .#{$screen}\@#{$val}\:#{$name} {
+          margin-#{$key}: $value;
+        }
+      }
+    }
+  }
+}

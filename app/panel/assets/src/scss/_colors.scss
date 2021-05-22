@@ -1,0 +1,16 @@
+/**
+* Colors Module
+* 
+*/
+
+@each $name, $val in $colors {
+  .#{$put}bg\:#{$name} {
+    background-color: #{$val} !important;
+  }
+  .#{$put}color\:#{$name} {
+    color: $val !important;
+  }
+  .#{$put}brd\:#{$name} {
+    border-color: $val !important;
+  }
+}

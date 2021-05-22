@@ -1,0 +1,19 @@
+{
+  "name": "sivan/wppack",
+  "description": "WordPress Starter Pack",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "sivankanat",
+      "email": "sivankanat@gmail.com"
+    }
+  ],
+  "autoload": {
+    "classmap": [
+      "app"
+    ]
+  },
+  "minimum-stability": "dev",
+  "require": {}
+}

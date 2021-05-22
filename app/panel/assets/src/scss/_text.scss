@@ -1,0 +1,47 @@
+/**
+* Text Helper
+* 
+*/
+
+.#{$put}text {
+  &\:meta {
+    color: map-get($colors, "secondary");
+  }
+  &\:upper {
+    text-transform: uppercase;
+  }
+  &\:lower {
+    text-transform: lowercase;
+  }
+  &\:capitalize {
+    text-transform: capitalize;
+  }
+  &\:italic {
+    font-style: italic;
+  }
+  &\:bold {
+    font-weight: bold;
+  }
+  &\:center {
+    text-align: center;
+  }
+  &\:left {
+    text-align: left;
+  }
+  &\:right {
+    text-align: right;
+  }
+  &\:lth {
+    text-decoration: line-through;
+  }
+  &\:under {
+    text-decoration: underline;
+  }
+}
+
+/* weigths */
+@each $weight in (100, 200, 300, 400, 500, 600, 700) {
+  .text\:#{$weight} {
+    font-weight: #{$weight} !important;
+  }
+}
