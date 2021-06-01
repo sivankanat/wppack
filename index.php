@@ -9,13 +9,15 @@
   <?php wp_head() ?>
 </head>
 
-<body>
+<body <?php body_class() ?>>
 
-  <h1>Hello World!</h1>
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium cupiditate odit quam vero nesciunt delectus voluptates. Esse autem perferendis cupiditate, repudiandae est mollitia asperiores facere voluptate qui nulla eum saepe.
-    Recusandae quos id numquam exercitationem quibusdam officiis deleniti quam distinctio, iusto blanditiis. Dolor consectetur harum blanditiis velit sunt libero nisi beatae unde. Cum deserunt reiciendis itaque dolorem nihil, voluptatem recusandae.</p>
+  <div id="wp_app">
 
+    <h1>Hello World!</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium cupiditate odit quam vero nesciunt delectus voluptates. Esse autem perferendis cupiditate, repudiandae est mollitia asperiores facere voluptate qui nulla eum saepe.
+      Recusandae quos id numquam exercitationem quibusdam officiis deleniti quam distinctio, iusto blanditiis. Dolor consectetur harum blanditiis velit sunt libero nisi beatae unde. Cum deserunt reiciendis itaque dolorem nihil, voluptatem recusandae.</p>
 
+  </div>
 
   <?php wp_footer() ?>
   <script src="<?php echo App::uri('assets/dist/js/app.js') ?>"></script>

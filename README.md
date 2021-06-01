@@ -1,8 +1,8 @@
 # WPPack
 
-Wordpress starter pack
+WPPack is a starter library for develop WordPress themes
 
-### İnstall
+## İnstall
 
 1. clone `git clone https://github.com/sivankanat/wppack.git .`
 2. install packages `npm install`
@@ -10,19 +10,46 @@ Wordpress starter pack
 4. Update `build/build.js`
 5. start `npm start`
 
-### Features
+```
+npm install
+composer install
+npm start
+```
 
-- Custom Post types
-- Theme Options Panel
-- Post Meta Boxes
-- SCSS, ES Modules
--
+## Usage
 
-### Usage
-
-source dir `assets/src/`. uses sass and node modules
+source dir `assets/src/`
 
 - for development mode use `npm start`
 - for production use `npm run build`
 
-### Usefull
+## Configuration
+
+- Customize the theme:
+
+  - Change the theme-name line from the `build/build.js`
+  - Customize the static pages, theme starter settings, menus and others in the `app/app.setup.php`
+
+- Configure the browser-sync:
+
+  - use the `build/server.js` file for the configuration
+
+## Features
+
+- Custom Post types
+- Theme Options Panel
+- Post Meta Boxes
+- SCSS support
+- ES Modules
+- Browser Sync
+-
+
+## Contributing
+
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+Please make sure to update tests as appropriate.
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)

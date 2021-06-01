@@ -6,12 +6,28 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 [0.3.0]: https://github.com/sivankanat/wppack/releases/tag/v0.3.0
+[0.7.0]: https://github.com/sivankanat/wppack/releases/tag/v0.7.0
+
+## [0.7.0] - 2021-06-1
+
+### Added
+
+- Added the dequeue property to the app.assets for remove unused files. see `app/app.assets.php`
+- Added the get_items property to the app.menus. see `app/app.menus.php`
+- Added the get_title and the display_title properties to the app.menus. see `app/app.menus.php`
+
+### Changed
+
+- Bug fixed from the add_static_pages
+- Bug fixed from the get_menu_title
+- Bug fixed from the server.js
+- The static page publisher moved to the app.setup.php
 
 ## [0.3.0] - 2021-05-22
 
 ### important
 
-- wpstarter changet to wppack see https://github.com/sivankanat/wpstarter
+- wpstarter changed to wppack see https://github.com/sivankanat/wpstarter
 
 ### Added
 

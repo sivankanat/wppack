@@ -2,9 +2,9 @@
 
 /**
  * WPPack App Menus
- *
+ * 
+ * @see https://github.com/sivankanat/wppack
  * @package wppack
- * @author <sivankanat@gmail.com>
  * @since 1.0.0
  *
  */
@@ -36,18 +36,31 @@ class AppMenus
         return $menu;
     }
 
-    /* menu title */
-    public static function get_menu_title($name = "")
+    /* get menu items */
+    public static function get_items($menu_id = "")
     {
-        $locations = get_nav_menu_locations();
-        $menu_id   = $locations[$name];
-        $title     = wp_get_nav_menu_object($menu_id)->name;
-        return htmlspecialchars_decode($title);
+        $items = self::check_menu($menu_id);
+        if ($items) :
+            return $items;
+        endif;
+        return false;
     }
-    public static function display_menu_title($name = "")
+
+    /* menu title */
+    public static function get_title($menu_name = "")
     {
-        if (!empty(self::get_menu_title($name))) :
-            echo self::get_menu_title($name);
+        $title = "NaN!";
+        if (($locations = get_nav_menu_locations()) && isset($locations[$menu_name])) :
+            $title     = htmlspecialchars_decode(wp_get_nav_menu_object($locations[$menu_name])->name);
+        endif;
+        return $title;
+    }
+
+    /* dispyal html title */
+    public static function display_title($name = "")
+    {
+        if (!empty(self::get_title($name))) :
+            echo self::get_title($name);
         else :
             echo '<i class="fas fa-bars"></i><span>Menu</span>';
         endif;

@@ -3,8 +3,8 @@
 /**
  * WPPack App Setup
  *
+ * @see https://github.com/sivankanat/wppack
  * @package wppack
- * @author <sivankanat@gmail.com>
  * @since 1.0.0
  *
  */
@@ -18,8 +18,11 @@ class AppSetup extends App
         add_action('after_setup_theme', array($this, 'custom_logo'));
         add_action('widgets_init', array($this, 'widget_init'));
 
-        /* block */
-        /* add_filter('use_block_editor_for_post', array($this, '_disable_block_for_postname'), 10, 2); */
+        // add static pages
+        add_action("init", array($this, "add_static_pages"));
+
+        // disable block editor
+        // add_filter('use_block_editor_for_post', array($this, 'disable_gutenberg_for_posts'), 10, 2);
     }
 
 
@@ -64,6 +67,27 @@ class AppSetup extends App
             )
         );
     }
+
+    /**
+     * Add static pages
+     */
+    public function add_static_pages()
+    {
+        $pagelist = array(
+            "Home",
+            "Blog",
+            "Changelog",
+            "Test"
+        );
+
+        foreach ($pagelist as $pg) :
+            if (!get_page_by_title($pg, OBJECT, 'page')) :
+                wp_insert_post(array("post_title" => $pg, "post_status" => "publish", "post_type" => "page", "post_content" => "<p></p>"));
+            endif;
+        endforeach;
+    }
+
+
     /**
      * @see https://developer.wordpress.org/themes/functionality/custom-logo/
      *  logo */
@@ -95,7 +119,7 @@ class AppSetup extends App
             )
         );
     }
-    public function _disable_block_for_postname($u, $post)
+    public function disable_gutenberg_for_posts($u, $post)
     {
         if ($post->post_name == "postname") :
             return false;

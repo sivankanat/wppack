@@ -2,9 +2,9 @@
 
 /**
  * WPPack Functions
- *
+ * 
+ * @see https://github.com/sivankanat/wppack
  * @package wppack
- * @author <sivankanat@gmail.com>
  * @since 1.0.1
  *
  */
@@ -20,4 +20,4 @@ endif;
 new App;
 new AppSetup;
 new AppAssets;
-new AppPanel();
+new AppPanel;

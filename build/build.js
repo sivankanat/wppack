@@ -1,7 +1,7 @@
 file_basename = "App";
 const packageJson = require("../package.json");
-banner_excerpt = `/**! WPPack ${packageJson.version} | https://github.com/sivankanat/wppack | MIT */\n`;
-banner_full = `/**!
+const banner_excerpt = `/**! WPPack ${packageJson.version} | https://github.com/sivankanat/wppack | MIT */\n`;
+const banner_full = `/**!
 Theme Name: WPPack
 Text Domain: wppack
 Version: ${packageJson.version}

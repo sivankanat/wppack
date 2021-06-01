@@ -3,8 +3,8 @@
 /**
  * WPPack App
  *
+ * @see https://github.com/sivankanat/wppack
  * @package wppack
- * @author <sivankanat@gmail.com>
  * @since 1.0.0
  *
  */
@@ -17,17 +17,8 @@ class App
     public function __construct()
     {
         $this->version = wp_get_theme()->Version;
-        add_action("init", array($this, "add_pages"));
     }
 
-    public function add_pages()
-    {
-        foreach (['Home', 'Blog', 'Test', 'Changelog'] as $pg) :
-            if (!get_page_by_path($pg, OBJECT, 'page')) :
-                wp_insert_post(array("post_title" => $pg, "post_status" => "publish", "post_type" => "page", "post_content" => "<p></p>"));
-            endif;
-        endforeach;
-    }
 
     public static function uri($path = "")
     {

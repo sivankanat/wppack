@@ -3,8 +3,8 @@
 /**
  * WPPack App Posts
  *
+ * @see https://github.com/sivankanat/wppack
  * @package wppack
- * @author <sivankanat@gmail.com>
  * @since 1.0.0
  *
  */

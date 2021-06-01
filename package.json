@@ -7,7 +7,11 @@
   "scripts": {
     "test": "echo hi",
     "start": "node build/server",
-    "build": "node build/build"
+    "build": "node build/build",
+    "git": "git add . && git push && git push --tags",
+    "v:major": "npm version major && npm run git",
+    "v:minor": "npm version minor && npm run git",
+    "v:patch": "npm version patch && npm run git"
   },
   "dependencies": {},
   "devDependencies": {
@@ -36,7 +40,7 @@
     "url": "git+https://github.com/sivankanat/wppack.git"
   },
   "keywords": [
-    "wordpress starter theme"
+    "wordpress starter library"
   ],
   "author": "sw <sivankanat@gmail.com>",
   "license": "MIT",
